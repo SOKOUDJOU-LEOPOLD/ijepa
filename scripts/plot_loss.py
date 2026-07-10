@@ -25,7 +25,7 @@ def read_log(path):
     with open(path, newline='') as f:
         reader = csv.reader(f)
         for line in reader:
-            if len(line) < 6:
+            if len(line) < 6 or line[0] == 'epoch':
                 continue
             epoch, itr, loss, mask_a, mask_b, time_ms = line[:6]
             rows.append({
