@@ -24,12 +24,16 @@ Usage:
 """
 import argparse
 import json
+import os
+import sys
 import time
 from collections import OrderedDict
 
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import src.models.vision_transformer as vit
 from src.datasets.imagenet1k import ImageNet
